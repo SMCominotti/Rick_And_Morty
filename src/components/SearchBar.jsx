@@ -1,8 +1,16 @@
+import {useState} from 'react';
+
 function SearchBar({onSearch}) {
+const [id,setId] = useState ('');
+
+const handleChange= (event) =>{
+   setId(event.target.value)
+}
+
    return (
       <div>
-         <input type='search' />
-         <button onClick={onSearch}>Agregar</button> 
+         <input type='search' onChange={handleChange} value={id} />
+         <button onClick={() => onSearch(id)}>Agregar</button> 
       </div>
    );
 }
@@ -10,3 +18,4 @@ function SearchBar({onSearch}) {
 export default SearchBar;
 
 //NO TENGO QUE INVOCAR A LA FUNCION, SE TIENE QUE EJECUTAR CUANDO HAGO CLICK
+// El de onClick lo pongo adentro de un cb porque solo necesito que se ejecute cuando haga click
