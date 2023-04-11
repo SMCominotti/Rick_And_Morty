@@ -2,7 +2,7 @@ import Card from './Card';
 
 function Cards({characters, onClose}){ //[{..},{...}],[{...},] array de objetos
       return (
-   <div>
+            <div className='containerCard'>
       {
         characters.map(({id, name, status, species, gender, origin, image})=>{ //lo pongo ahi y hago destructuring de character
         return <Card
@@ -19,6 +19,7 @@ function Cards({characters, onClose}){ //[{..},{...}],[{...},] array de objetos
          })
       }
    </div>
+  
       )
 }
 
