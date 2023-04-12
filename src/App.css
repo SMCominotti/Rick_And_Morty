@@ -145,4 +145,8 @@ border:solid rgb(224, 245, 37) 1px;
       margin-top: 5%;
       border:rgb(6, 0, 0) solid 5px;
     }
- 
+ .error{
+  background-color: red;
+  color: white;
+  font-size: 30px;
+ }
