@@ -1,0 +1,74 @@
+
+.cartas {
+    border-radius: 20px;
+    border: solid rgb(14, 2, 54);
+    background-image: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 12px;
+    flex: 0 0 200px 100px;
+  }
+  .LinkDetails{
+   text-decoration: none;
+  }
+  
+ .NombreCarta{
+ color: white;
+ background-color: black;
+ border:solid rgb(224, 245, 37) 1px;
+ }
+ 
+ .datos{
+   font-size: 10px;
+   padding: 10px; 
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: auto auto;
+   grid-gap: 1em;
+   justify-items: center;
+ }
+   
+ 
+ .datos h2 {
+   background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+   color:black;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-style: bold;
+   margin: 4px; /* Margen */
+   border: 2px solid rgb(224, 245, 37); /* Borde */
+   border-radius: 20px;
+   font-size: 14px;
+   text-align: center;
+   width: 50px;
+   height: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1.5em;
+   max-width: 100%;
+   max-height: max-content;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+ 
+ .onClick{
+   background-color: rgb(193, 8, 8);
+   border-radius: 50%;
+   color: white;
+   margin-bottom: 5%;
+ }
+ 
+  .imagen {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    border: solid black;
+    margin-top: 5%;
+  }
+ 
+  .fav{
+   margin-top: 2% ;
+   border-radius: 50%;
+  }

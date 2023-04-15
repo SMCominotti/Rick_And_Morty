@@ -1,5 +1,6 @@
 import React from 'react'
 import stel from './Image/Cartoon2.jpeg'
+import './About.css'
 
 const About = () => {
   return (

@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './Detail.css'
 
 const URL_BASE ='https://be-a-rym.up.railway.app/api/character';
 const API_KEY= '7e8f7b965f91.59e0763ac8d79339eae1';
@@ -27,11 +28,22 @@ const Detail = () => {
       <div>
         <img className='imgDetail' src ={character?.image} alt={character?.name} />  
          <div className='DetailDate'>
-      <h2 className='name'>{character?.name}</h2>
-      <h2>{character?.status}</h2>
-      <h2>{character?.species}</h2>
-      <h2>{character?.gender}</h2>
-      <h2>{character?.origin?.name}</h2>
+            <h2 className='name'>{character?.name}</h2>
+            <div className='det'>
+                   <div>
+                      <label htmlFor="status"> Status: {character?.status} </label>
+                   </div>
+                    <div>
+                       <label htmlFor="specie">Specie: {character?.species}</label>
+                   </div>  
+                   <div>
+                     <label htmlFor="gender">Gender: {character?.gender}</label>
+                 </div>  
+                 <div>
+                     <label htmlFor="origin">Origin: {character?.origin?.name}</label>
+                 </div>  
+                 <br />
+            </div>
          </div>
       </div>
    )

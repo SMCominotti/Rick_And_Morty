@@ -1,0 +1,35 @@
+.nav-btn {
+    background-color: white; /* Color de fondo */
+    border: solid blue 1px; /* Borde */
+    color: black; /* Color de texto */
+    padding: 6px 32px; /* Espacio interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Decoración de texto */
+    display: inline-block; /* Mostrar como bloque */
+    font-size: 10px; /* Tamaño de fuente */
+    margin: 8px 12px; /* Margen */
+    cursor: pointer; /* Tipo de cursor */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Tipo de cursor */
+    transition-duration: 0.8s; /* Duración de la transición */
+    
+  }
+
+  .logOut{
+    background-color: red;
+    text-decoration: none
+  }
+  
+  .nav-btn:hover {
+    background-color: #3e8e41; /* Color de fondo en hover */
+  }
+  
+  .nav-link {
+    color: black; /* Color de texto */
+    text-decoration: none; /* Decoración de texto */
+  }
+  
+  .nav-link:hover {
+    color: #4CAF50; /* Color de texto en hover */
+  }
+   

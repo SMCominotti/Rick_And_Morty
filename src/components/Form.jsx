@@ -31,12 +31,12 @@ const Form = ({login}) => {
   return (
      <div className="container">
         <form onSubmit={handleOnSubmit} className="login-form">
-            <label htmlFor='email'>Email:</label>
+            <label htmlFor='email' style={{color:"white"}} >Email:</label>
             <input className='form-input' name='email' type='email' placeholder='Ingrese su mail' value={form.email} onChange={handleOnChange}  />
-            {errors.email && <p>{errors.email}</p>} 
-            <label htmlFor='password'>Password: </label>
+            {errors.email && <p style={{color:"red"}}>{errors.email}</p>} 
+            <label htmlFor='password' style={{color:"white"}} >Password: </label>
             <input className='form-input' name='password' type='password' placeholder='Ingrese su contraseña' value={form.password} onChange={handleOnChange}  />
-            {errors.password && <p>{errors.password}</p>}
+            {errors.password && <p style={{color:"red"}}>{errors.password}</p>}
             <button className='form-button' disabled={!form.email || !form.password || errors.email || errors.password}> Submit </button>
          </form>
         </div>

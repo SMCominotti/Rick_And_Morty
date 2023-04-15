@@ -1,4 +1,5 @@
 import Card from './Card';
+import './Cards.css'
 
 function Cards({characters, onClose}){ //[{..},{...}],[{...},] array de objetos
       return (

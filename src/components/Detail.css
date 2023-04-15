@@ -1,0 +1,26 @@
+
+.DetailDate{
+    color: rgb(6, 0, 0);
+    border-radius: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    border:rgb(6, 0, 0) solid 3px; 
+    }
+
+    .det{
+      font-size: 2em;
+      font-style: bold;
+    }
+    .name{
+      color: white;
+      font-size: 3em;
+    }
+    .imgDetail{
+      border-radius: 50%;
+      margin-top: 5%;
+      border:rgb(6, 0, 0) solid 5px;
+    }
