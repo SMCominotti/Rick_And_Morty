@@ -1,0 +1,13 @@
+.App {
+   text-align: center;
+    }
+ 
+body{ 
+  background-image: url('./components/Image/fondo.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+/*tengo que ponerlo asi para que ocupue todo e fonodo*/
+
+
