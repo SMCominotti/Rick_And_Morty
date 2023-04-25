@@ -1,13 +1,49 @@
-const http= require('http');
-const getCharById= require('./controllers/getCharById');
-//const characters= require('./utils/data');
+const express = require('express');
+const server = express();
+const router = require ('./routes/index.js')
+const morgan = require ('morgan')
+const PORT= 3001
 
-http.createServer((req, res) => { // con esto creo el servidor
-    res.setHeader('Access-Control-Allow-Origin', '*')// con esta linea le doy permiso al Frontend para que me haga peticiones.
-    if(req.url.includes('/rickandmorty/character')){ // dice incluye, por lo que debe tener otras cosas
-      let id= req.url.split('/').at(-1); //hago esto porque me pide el id recibido
-        getCharById(res,id)
-    }
+server.use(express.json());
+
+server.use(morgan('dev'));
+
+server.use((req, res, next) => {  //esto es un middleware que pasaban por consigna
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+     'Access-Control-Allow-Methods',
+     'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
+
+server.use('/rickandmorty',router);
+
+server.listen (PORT, () => {
+  console.log ('server raised in port: ' + PORT)
+})
+
+
+
+
+//Esto queda todo borrado cuando empezamos a trabajar con Back-end
+// const http= require('http');
+// const getCharById= require('./controllers/getCharById');
+// //const characters= require('./utils/data');
+
+// http.createServer((req, res) => { // con esto creo el servidor
+//     res.setHeader('Access-Control-Allow-Origin', '*')// con esta linea le doy permiso al Frontend para que me haga peticiones.
+//     if(req.url.includes('/rickandmorty/character')){ // dice incluye, por lo que debe tener otras cosas
+//       let id= req.url.split('/').at(-1); //hago esto porque me pide el id recibido
+//         getCharById(res,+id) // le pongo el mas adelante para pasarlo a Number
+//     }
+//   }).listen(3001,'localhost') // si no funciona, probar sacar el localhost
+  
   // let id=req.url.split("/").pop(); //Esta es otra alternativa
       
  //  let id= req.url.split('/').at(-1); //con el split porngo que separe por la barra, porque yo necesito el id
@@ -22,6 +58,6 @@ http.createServer((req, res) => { // con esto creo el servidor
   // .writeHead (200,{'Content-Type':'application/json'})
    //.end(JSON.stringify(characterFind))
 //}
-}).listen(3001,'localhost') // si no funciona, probar sacar el localhost
+
 
 //siempre los datos que llegan x url son string.
