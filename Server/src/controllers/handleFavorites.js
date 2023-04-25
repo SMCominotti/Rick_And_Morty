@@ -11,7 +11,7 @@ const postFav=(req, res) => {
 const deleteFav= (req, res) => {
     const {id}= req. params;
 
-    myFavorites = myFavorites.filter((favorite) => favorite.id !== id); //piso el array original, si hago una constante aparte, nunca modificio el array original 
+    myFavorites = myFavorites.filter((favorite) => favorite.id !== +id); //piso el array original, si hago una constante aparte, nunca modificio el array original 
 
     return res.status(200).json(myFavorites);
 };
