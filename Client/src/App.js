@@ -10,8 +10,8 @@ import Form from './components/Form/Form.jsx'
 import Favorites from './components/Favorite/Favorites.jsx'
 
 
-const EMAIL= 'stel@gmail.com';
-const PASSWORD= 'Stel1234';
+const email = 'stel@gmail.com';
+const password= 'Stel1234';
 
 function App() {
    const [characters, setCharacters] = useState ([]); // va con corchetes porque useState retorna un array
@@ -19,12 +19,19 @@ function App() {
    const navigate= useNavigate();
    const [access,setAccess]= useState(false);
 
-   function login(userData){
-      if(userData.password === PASSWORD && userData.email === EMAIL){
-         setAccess(true);
-         navigate('/home');
-      }
-   }
+
+//con esta le mandamos informacion al Back
+const login = (userData) => {
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login';
+   axios(URL + `?email=${email}&password=${password}`)
+   .then(({ data }) => {
+      const { access } = data;
+      setAccess(access);
+      access && navigate('/home');
+   });
+}
+
 
     useEffect(()=>{
       !access && navigate('/');
@@ -78,3 +85,13 @@ return (
 //onSearch se paso como propiedad a Nav
 // Nav debe estar en todas las rutas
 export default App;
+
+  //elimino esto en back 
+   // function login(userData){
+   //    if(userData.password === PASSWORD && userData.email === EMAIL){
+   //       setAccess(true);
+   //       navigate('/home');
+   //    }
+   // }
+
+   //y la reemplazo por esta
